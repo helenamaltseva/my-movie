@@ -1,0 +1,24 @@
+.main {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+   
+  margin: 0 auto;
+
+  background-image: url("../../images/bg.jpg");
+}
+
+.main-box {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin: 0 auto;
+}
+
+.error {
+  font-size: 40px;
+  font-weight: 700;
+}
