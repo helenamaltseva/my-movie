@@ -1,12 +1,13 @@
 .main {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
    
   margin: 0 auto;
 
-  background-image: url("../../images/bg.jpg");
+  // background-image: url("../../images/bg.jpg");
+  background-color: #d1caee;
 }
 
 .main-box {

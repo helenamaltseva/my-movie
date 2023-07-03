@@ -3,7 +3,7 @@ import "../../assets/styles/components/card.scss"
 // import poster from "../../assets/images/poster.jpg"
 
 const Card = (movie) => {
-  console.log(movie.info);
+  // console.log(movie.info);
   let img_path="https://image.tmdb.org/t/p/w500";
 
 
@@ -17,7 +17,7 @@ const Card = (movie) => {
             <p className="card-block__front__rating">{movie.info.vote_average}</p>
           </div>
           <div className="card-block__back">
-            <h2 className="card-block__back__summary">Summary</h2>
+            <h2 className="card-block__back__summary">Overview</h2>
             {movie.info.overview} 
             
           </div>

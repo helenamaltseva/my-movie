@@ -1,11 +1,12 @@
 .card {
   position: relative;
-  width: 250px;
+  width: 200px;
   margin: 16px;
 
   border-radius: 2px;
   box-sizing: border-box;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .card-poster {
