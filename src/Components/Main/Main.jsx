@@ -7,7 +7,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
 import "../../assets/styles/components/main.scss"
 import "../../assets/styles/components/header.scss"
 import "../../assets/styles/container/container.scss"
-import logo from "../../assets/images/logo.jpg"
+import logo from "../../assets/images/logo-r.jpg"
 
 
 let API_key="&api_key=056bd4b1062af5614a130c8953a04a6d";
