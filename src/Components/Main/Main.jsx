@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../Card"
 import { BsSearch } from "react-icons/bs"
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
 
 //assets
 import "../../assets/styles/components/main.scss"
@@ -20,6 +21,8 @@ const Main = () => {
   const [data, setData]=useState([]);
   const [url_set, setUrl]=useState(url);
   const [search, setSearch]=useState("");
+  const [nav, setNav] = useState(false);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
    
   useEffect(() => {
     fetch(url_set)
@@ -59,46 +62,26 @@ const Main = () => {
     }
     setUrl(url);
   }
-
-  // const searchMovie=(evt)=>{
-  //   if(evt.key==="Enter")
-  //   {
-  //     url=base_url+"/search/movie?api_key=056bd4b1062af5614a130c8953a04a6d&query="+search;
-  //     setUrl(url);
-  //     setSearch(" ");
-  //   }
-  // } 
   
   const searchMovie = (evt) => {
-    evt.preventDefault(); // Остановить отправку формы
+    evt.preventDefault(); 
   
     url = base_url + "/search/movie?api_key=056bd4b1062af5614a130c8953a04a6d&query=" + search;
     setUrl(url);
     setSearch(" ");
   }
 
+
+
   return (
     <>
-      <div className="header">
-        <div className="logo-nav">
+      {/* <div className="header">
+        <div className={`logo-nav${nav ? " open" : ""}`}>
           <div className="header-logo">
             <img className="header-logo__img" src={logo} alt="" />
           </div>
           <nav className="header-navigation">
-            {/* <ul className="header-navigation__list">
-
-              {
-                genres.map((value,pos)=>{
-                
-                  return(
-                    <li className="header-navigation__list-item"><a href="#" key={pos} name={value} onClick={(e)=>{getData(e.target.name)}}>{value}</a></li>
-                  )
-                  
-                })
-              }
-
-            </ul> */}
-
+            
             <ul className="header-navigation__list">
               {genres.map((value, pos) => (
                 <li className="header-navigation__list-item" key={pos}>
@@ -108,20 +91,34 @@ const Main = () => {
                 </li>
               ))}
             </ul>
-
+              
           </nav>
-        </div>
-        {/* <form className="header-form">
-          <div className="header-form__search">
-            <input className="header-form__search-input" type="text" placeholder="Enter search" 
-              onChange={(e) => {setSearch(e.target.value)}} 
-              value={search} onKeyPress={searchMovie}>
-            </input>
-            <button className="header-form__search-btn" type="submit" >
-              <i className="header-form__search-btn__icon"><BsSearch/></i>
-            </button>
+          <div className="logo-nav__burger-btn" onClick={() => setNav(!nav)}>
+            {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
+          </div>   
+        </div> */}
+        
+      <div className="header">
+        <div className={`logo-nav ${nav ? "open" : ""}`}>
+          <div className="header-logo">
+            <img className="header-logo__img" src={logo} alt="" />
           </div>
-        </form> */}
+          <nav className="header-navigation">
+            <ul className="header-navigation__list">
+              {genres.map((value, pos) => (
+                <li className="header-navigation__list-item" key={pos}>
+                  <a href="#" name={value} onClick={(e) => { getData(e.target.name) }}>
+                    {value}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="logo-nav__burger-btn" onClick={() => setNav(!nav)}>
+            {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
+          </div>   
+        </div>
+        
         <form className="header-form" onSubmit={searchMovie}>
           <div className="header-form__search">
             <input
@@ -154,9 +151,9 @@ const Main = () => {
             )
           })
         }
-          
+               
       </div>
-                  
+                        
     </>
   )
 }
