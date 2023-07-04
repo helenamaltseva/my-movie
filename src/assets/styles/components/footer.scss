@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  
+  background-color: #1E1E1E;
+  width: 100%;
+  height: 100px;
+}
+
+.footer-text {
+  font-size: 24px;
+  color: #FFFFFF;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.footer-author {
+  font-size: 14px;
+  color: #FFFFFF;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: 10px;
+}

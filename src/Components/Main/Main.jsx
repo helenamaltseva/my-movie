@@ -22,7 +22,6 @@ const Main = () => {
   const [url_set, setUrl]=useState(url);
   const [search, setSearch]=useState("");
   const [nav, setNav] = useState(false);
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
    
   useEffect(() => {
     fetch(url_set)
@@ -74,31 +73,8 @@ const Main = () => {
 
 
   return (
-    <>
+    <>        
       {/* <div className="header">
-        <div className={`logo-nav${nav ? " open" : ""}`}>
-          <div className="header-logo">
-            <img className="header-logo__img" src={logo} alt="" />
-          </div>
-          <nav className="header-navigation">
-            
-            <ul className="header-navigation__list">
-              {genres.map((value, pos) => (
-                <li className="header-navigation__list-item" key={pos}>
-                  <a href="#" name={value} onClick={(e) => { getData(e.target.name) }}>
-                    {value}
-                  </a>
-                </li>
-              ))}
-            </ul>
-              
-          </nav>
-          <div className="logo-nav__burger-btn" onClick={() => setNav(!nav)}>
-            {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
-          </div>   
-        </div> */}
-        
-      <div className="header">
         <div className={`logo-nav ${nav ? "open" : ""}`}>
           <div className="header-logo">
             <img className="header-logo__img" src={logo} alt="" />
@@ -108,6 +84,27 @@ const Main = () => {
               {genres.map((value, pos) => (
                 <li className="header-navigation__list-item" key={pos}>
                   <a href="#" name={value} onClick={(e) => { getData(e.target.name) }}>
+                    {value}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="logo-nav__burger-btn" onClick={() => setNav(!nav)}>
+            {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
+          </div>   
+        </div> */}
+
+      <div className="header">
+        <div className={`logo-nav ${nav ? "open" : ""}`}>
+          <div className="header-logo">
+            <img className="header-logo__img" src={logo} alt="" />
+          </div>
+          <nav className={`header-navigation ${nav ? "header-navigation_list_active" : ""}`}>
+            <ul className="header-navigation__list">
+              {genres.map((value, pos) => (
+                <li className="header-navigation__list-item" key={pos}>
+                  <a href="#" name={value} onClick={(e) => { getData(e.target.name); setNav(false); }}>
                     {value}
                   </a>
                 </li>
@@ -140,6 +137,9 @@ const Main = () => {
         </form>
 
       </div>
+
+
+      
       <div className="main">
 
         {
