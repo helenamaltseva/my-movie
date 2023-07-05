@@ -6,8 +6,9 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
 //assets
 import "../../assets/styles/components/main.scss"
 import "../../assets/styles/components/header.scss"
+import "../../assets/styles/components/footer.scss"
 import "../../assets/styles/container/container.scss"
-import logo from "../../assets/images/logo-r.jpg"
+import logo from "../../assets/images/logoN.jpg"
 
 
 let API_key="&api_key=056bd4b1062af5614a130c8953a04a6d";
@@ -71,29 +72,8 @@ const Main = () => {
   }
 
 
-
   return (
-    <>        
-      {/* <div className="header">
-        <div className={`logo-nav ${nav ? "open" : ""}`}>
-          <div className="header-logo">
-            <img className="header-logo__img" src={logo} alt="" />
-          </div>
-          <nav className="header-navigation">
-            <ul className="header-navigation__list">
-              {genres.map((value, pos) => (
-                <li className="header-navigation__list-item" key={pos}>
-                  <a href="#" name={value} onClick={(e) => { getData(e.target.name) }}>
-                    {value}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div className="logo-nav__burger-btn" onClick={() => setNav(!nav)}>
-            {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
-          </div>   
-        </div> */}
+    <>  
 
       <div className="header">
         <div className={`logo-nav ${nav ? "open" : ""}`}>
@@ -112,7 +92,7 @@ const Main = () => {
             </ul>
           </nav>
           <div className="logo-nav__burger-btn" onClick={() => setNav(!nav)}>
-            {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
+            {nav ? <AiOutlineClose className="close-icon" size={25} /> : <AiOutlineMenu className="menu-icon" size={25} />}
           </div>   
         </div>
         
@@ -131,14 +111,12 @@ const Main = () => {
               }}
             />
             <button className="header-form__search-btn" type="submit">
-              <i className="header-form__search-btn__icon"><BsSearch /></i>
+              <i className="header-form__search-btn__icon"><BsSearch className="search"/></i>
             </button>
           </div>
         </form>
 
       </div>
-
-
       
       <div className="main">
 
@@ -152,6 +130,11 @@ const Main = () => {
           })
         }
                
+      </div>
+
+      <div className="footer">
+        <p className="footer-text">Cinema is life, from which everything boring is cut out</p>
+        <p className="footer-author">ALFRED HITCHCOCK</p>
       </div>
                         
     </>

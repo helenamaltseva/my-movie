@@ -13,7 +13,7 @@ const Card = (movie) => {
         <div className="card-block__front">
           <div className="card-block__front-info">
             <h3 className="card-block__front-info__title">{movie.info.title}</h3>
-            <h2 className="card-block__front-info__year">{year}</h2>
+            <h4 className="card-block__front-info__year">{year}</h4>
           </div>  
           <p className="card-block__front__rating">{movie.info.vote_average}</p>
           
